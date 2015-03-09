@@ -14,3 +14,5 @@ follow the on screen instructions and your raspberry pi will be added to your ha
 
 
 Need any help or wish to donate to me my email address is txt3rob@gmail.com
+
+This is for use on Hard Float i.e raspbian :)
