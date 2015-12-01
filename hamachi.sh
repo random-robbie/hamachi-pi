@@ -5,11 +5,7 @@ sudo apt-get -y install --fix-missing lsb lsb-core
 echo "Downloading Hamachi"
 sudo wget https://secure.logmein.com/labs/logmein-hamachi_2.1.0.139-1_amd64.deb
 echo "Install Hamachi"
-dpkg -i https://secure.logmein.com/labs/logmein-hamachi_2.1.0.139-1_amd64.deb
-/etc/init.d/logmein-hamachi start
-echo "installing chkconfig"
-sudo apt-get -y install chkconfig
-sudo  chkconfig -s logmein-hamachi 2
+dpkg -i logmein-hamachi_2.1.0.139-1_amd64.deb
 echo "starting hamachi"
 sudo hamachi login
 echo "please enter your logmein account email address"
