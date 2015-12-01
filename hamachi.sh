@@ -3,9 +3,9 @@ echo "installing requirements"
 sudo apt-get update
 sudo apt-get -y install --fix-missing lsb lsb-core
 echo "Downloading Hamachi"
-sudo wget https://beta.logmein.com/labs/logmein-hamachi_2.1.0.139-1_armhf.deb
+sudo wget https://secure.logmein.com/labs/logmein-hamachi_2.1.0.139-1_amd64.deb
 echo "Install Hamachi"
-dpkg -i logmein-hamachi_2.1.0.139-1_armhf.deb
+dpkg -i https://secure.logmein.com/labs/logmein-hamachi_2.1.0.139-1_amd64.deb
 /etc/init.d/logmein-hamachi start
 echo "installing chkconfig"
 sudo apt-get -y install chkconfig
