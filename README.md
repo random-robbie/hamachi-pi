@@ -12,7 +12,7 @@ It automates the download, installation, and configuration steps.
 To install, run the following commands in your terminal:
 
 ```bash
-wget https://raw.githubusercontent.com/txt3rob/hamachi-pi/master/hamachi.sh
+wget https://raw.githubusercontent.com/random-robbie/hamachi-pi/master/hamachi.sh
 chmod +x hamachi.sh
 ./hamachi.sh
 ```
