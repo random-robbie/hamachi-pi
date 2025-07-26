@@ -4,7 +4,7 @@ Install Hamachi on your Raspberry Pi
 copy and paste the below
 
 ```
-sudo wget https://raw.github.com/txt3rob/hamachi-pi/master/hamachi.sh
+sudo wget https://raw.github.com/random-robbie/hamachi-pi/master/hamachi.sh
 sudo chmod 777 hamachi.sh
 sudo ./hamachi.sh
 ```
