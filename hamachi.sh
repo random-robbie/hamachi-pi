@@ -1,21 +1,33 @@
 #!/bin/bash
-echo "installing requirements"
+set -euo pipefail
+
+echo "Updating package lists..."
 sudo apt-get update
-sudo apt-get -y install --fix-missing lsb lsb-core
-echo "Downloading Hamachi"
-sudo wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_armhf.deb
-echo "Install Hamachi"
-dpkg -i logmein-hamachi_2.1.0.203-1_armhf.deb
-/etc/init.d/logmein-hamachi start
-echo "installing chkconfig"
-sudo apt-get -y install chkconfig
-sudo  chkconfig -s logmein-hamachi 2
-echo "starting hamachi"
+
+echo "Installing required packages (LSB)..."
+sudo apt-get install -y --fix-missing lsb lsb-core
+
+echo "Downloading Hamachi (ARM HF beta v2.1.0.203‑1)..."
+wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_armhf.deb
+
+echo "Installing Hamachi package..."
+sudo dpkg -i logmein-hamachi_2.1.0.203-1_armhf.deb || sudo apt-get install -f -y
+
+echo "Starting Hamachi daemon..."
+sudo /etc/init.d/logmein-hamachi start
+
+echo "Ensuring Hamachi starts on boot..."
+sudo update-rc.d logmein-hamachi defaults
+
+echo "Logging into Hamachi..."
 sudo hamachi login
-echo "please enter your logmein account email address"
-read email
-sudo hamachi attach $email
-echo "please enter your raspberry pi nickname "
-read nick
-sudo hamachi set-nick $nick
-echo "your pi should now be on your hamachi network"
+
+echo "Enter your LogMeIn account email address:"
+read -r email
+sudo hamachi attach "$email"
+
+echo "Enter your Raspberry Pi nickname:"
+read -r nick
+sudo hamachi set-nick "$nick"
+
+echo "Installation complete — your Pi should now appear on your Hamachi network."
